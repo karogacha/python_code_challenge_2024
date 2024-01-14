@@ -6,7 +6,15 @@ def circle_area(rad: float) -> float:
 
 def main():
     print("##### We will calculate the area of a circle given its radius. #####")
-    radius = float(input("Enter the radius value:"))
+    error = True
+    while error:
+        try:
+            radius = float(input("Enter the radius value:"))
+            error = False
+        except ValueError as e:
+            print("Only numeric values are valid. Please try again.")
+        except Exception as e:
+            print("An unexpected error ocurred while retreiving the value of radius. Please try again.")
     area = circle_area(radius)
     print(f"The resulting area is: {area}")
 
