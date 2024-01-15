@@ -3,7 +3,7 @@
 def num_vowels(text: str):
     vowels = ['a','e','i','o','u']
 
-    count = len([c for c in text if c in vowels])
+    count = len([c for c in text.lower() if c in vowels])
 
     return count
 
