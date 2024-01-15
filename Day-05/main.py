@@ -1,20 +1,11 @@
-# Write a program to find the sum of all elements in a list.
+# Write a program to find the maximum and minimum values in a list.
 
-def sum_elements(elem):
+def max_and_min(elem):
 
-    try:
-        result = 0
-        for e in elem:
-            result += float(e)
-    except ValueError:
-        return None
-    except Exception:
-        return None
-
-    return result
+    return min(elem), max(elem)
 
 def main():
-    print("##### We will calculate the sum of all the elements in a given list. #####")
+    print("##### We will get the max value of a given list of numbers. #####")
     error = True
     num = 0
     # Retrieve the number of elements in the list
@@ -42,11 +33,7 @@ def main():
         except Exception as e:
             print("An unexpected error ocurred while retreiving the value for one element. Please try again.")
 
-    sum = sum_elements(my_list)
-    if sum is not None:
-        print(f"The sum of the elements in the list {my_list} is: {sum}")
-    else:
-        print(f"Something went wrong while calculating the sum of the given list.")
-
+    max,min = max_and_min(my_list)
+    print(f"Given the following list {my_list}, the mimimum value is: {min} and the maximum is: {max}")
 
 main()
