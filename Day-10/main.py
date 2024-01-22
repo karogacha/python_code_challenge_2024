@@ -5,7 +5,7 @@ def remove_duplicates(elem):
     return list(set(elem))
 
 def main():
-    print("##### We will get the max value of a given list of values. #####")
+    print("##### We will remove duplicates from a given list. #####")
     error = True
     num = 0
     # Retrieve the number of elements in the list
@@ -29,7 +29,7 @@ def main():
             my_list.append(val)
             i+=1
         except ValueError as e:
-            print("Only float values are valid for each element. Please try again.")
+            print("Only string values are valid for each element. Please try again.")
         except Exception as e:
             print("An unexpected error ocurred while retreiving the value for one element. Please try again.")
 
