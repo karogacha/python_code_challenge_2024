@@ -2,7 +2,7 @@
 
 def remove_duplicates(elem):
 
-    return set(elem)
+    return list(set(elem))
 
 def main():
     print("##### We will get the max value of a given list of values. #####")
