@@ -3,14 +3,13 @@ import re
 
 def word_freq(sentence: str):
     words = re.findall(r"[\w']+",sentence.lower())
-    print(words)
+    # print(words)
     words_fq={}
     for w in words:
         if len(words_fq) == 0:
             words_fq[w] = 1
         else:
-            print(len(words_fq))
-            found=False
+            # print(len(words_fq))
             if w in words_fq:
                 words_fq[w] += 1
             else:
@@ -35,6 +34,6 @@ def main():
     print("##### We will count the frequency of each word in a sentence. #####")
     sentence = retrieve_string()
     frequency = word_freq(sentence)
-    print (frequency)
+    print (f"The word frequency in the sentence: '{sentence}' is:\n{frequency}")
 
 main()
