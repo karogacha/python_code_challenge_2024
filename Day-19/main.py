@@ -1,12 +1,11 @@
 # Write a function to calculate the factorial of a number.
 
-def factorial(num: int, res=1):
+def factorial(num: int):
 
-    if num==1:
-        return res
+    if (num==1) or (num==0):
+        return 1
     else:
-        res=res*num
-        return factorial(num-1, res)
+        return num * factorial(num-1)
 
 def retrieve_num():
     error = True
@@ -17,7 +16,7 @@ def retrieve_num():
             num = int(input("Enter a number: "))
             if num>9999999:
                 print("The number must be less than 10,000,000. Please try again.")
-            elif num<1:
+            elif num<0:
                 print("The number must be more or equal than 1. Please try again.")
             else:
                 error = False
