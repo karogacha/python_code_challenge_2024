@@ -1,7 +1,10 @@
 # Create a program that uses a lambda function to square each element of a list.
 
-def square(num:float):
-    return num * num
+def square_num(num:float):
+    return num**2
+
+def square_list(my_list):
+    return list(map(lambda x: square_num(x), my_list))
 
 def retrieve_list_numbers(num=-1):
     error = True
@@ -35,7 +38,7 @@ def retrieve_list_numbers(num=-1):
 def main():
     print("##### We will square each element of a list. #####")
     list_num =retrieve_list_numbers()
-    square_list = list(map(lambda x: square(x), list_num))
-    print(f"Given the following lists: {list_num}, the new list with squares is: {square_list}")
+    squared = square_list(list_num)
+    print(f"Given the following lists: {list_num}, the new list with squares is: {squared}")
 
 main()
