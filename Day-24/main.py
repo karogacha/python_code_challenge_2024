@@ -3,7 +3,7 @@
 def remove_vowels(sentence: str):
     # words = re.findall(r"[\w']+",sentence.lower())
     # print(words)
-    new_sent = ''.join([c if c.lower() not in ('a','e','i','o','u') else '_' for c in sentence ])
+    new_sent = ''.join([c if c.lower() not in 'aeiou' else '_' for c in sentence ])
     return new_sent
 
 def retrieve_string():
