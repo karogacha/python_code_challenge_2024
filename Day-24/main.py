@@ -1,8 +1,11 @@
 # Write a program to remove vowels from a given string.
+import re
 
 def remove_vowels(sentence: str):
-    # words = re.findall(r"[\w']+",sentence.lower())
-    # print(words)
+    new_sent = ''.join(re.findall(r"[^aeiouAEIOU]", sentence))
+    return new_sent
+
+def replace_vowels(sentence: str):
     new_sent = ''.join([c if c.lower() not in 'aeiou' else '_' for c in sentence ])
     return new_sent
 
