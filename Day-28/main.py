@@ -1,12 +1,17 @@
 # Create a program that removes the nth element from a list.
 
-# we can use pop(index) but i want to keep the original list
+'''
+different ways to remove the nth element from a list:
+1. use the built-in del statement (imperative way)
+2. use the built-in pop() method
+3. use the built-in remove() method
+4. use slicing (pythonic way)
+5. use a list comprehension (pythonic way)
+6. use the built-in filter() function (functional way)
+7. use shifting and overwriting in-place (imperative way)
+'''
 def remove_element(my_list, index):
-    n_list=[]
-    for i, value in enumerate(my_list):
-        if i != index-1:
-            n_list.append(value)
-    return n_list
+    return [val for i,val in enumerate(my_list) if i!=index-1]
 
 def retrieve_list(num=-1):
     error = True
@@ -42,8 +47,8 @@ def retrieve_num(max=10000000):
     while error:
         try:
             num = int(input("Enter the index to remove: "))
-            if num>9999999:
-                print(f"The number must be less than {max}. Please try again.")
+            if num>max:
+                print(f"The number must be less or equal than {max}. Please try again.")
             elif num<0:
                 print("The number must be more or equal than 1. Please try again.")
             else:
