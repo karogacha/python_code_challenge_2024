@@ -7,7 +7,7 @@ def sorted(my_list):
         index=0
         inserted = False
         for index, value in enumerate(sorted_list):
-            if elem < value:
+            if elem.lower() < value.lower():
                 sorted_list.insert(index,elem)
                 inserted=True
                 break
